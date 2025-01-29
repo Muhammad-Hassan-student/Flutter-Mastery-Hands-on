@@ -72,33 +72,27 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.white,
         ),),
       ),
-      body: Container(
-        height: 200,
-        width: 200,
-        color: Colors.red,
-        padding:const EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0,bottom: 20.0),
-
-        child: Container(
-          height: 100,
-          width: 100,
-          color: Colors.orange,
-          padding: const EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0,bottom: 20.0),
-
-          child: Container(
-            height: 50,
-            width: 50,
-            color: Colors.teal,
-            child: const Text('Hi I am here Muhammad Hassan Akram ❤👑',
-            style: TextStyle(
-              color:Colors.white,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-            )),
-
-
-          ),
+      body: ElevatedButton(
+      //   style: ButtonStyle(
+      //   backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
+      //   foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+      // ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.cyan,
+          foregroundColor: Colors.white
         ),
+                onPressed: () {
+              print("You are clicked on Text buttons");
+            },
+              onLongPress: () {
+                  print("Hi😊😜");
+              },
+                child: Text("Click here for login"),
       ),
+            
+
+
+
        // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
