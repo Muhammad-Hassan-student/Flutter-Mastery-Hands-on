@@ -1,99 +1,178 @@
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/FoodHome.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main(){
+  runApp( MyFlutterApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+//create MyFlutterApp
+class MyFlutterApp extends StatelessWidget{
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
+      title: "Flutter Code Anaylyze",
+
       theme: ThemeData(
+        primarySwatch: Colors.blue,
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
-        useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-
-
+        // home: Foodhome(),
+    home: MyHome(),
     );
   }
+
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
-
-
+// My home page
+class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.amberAccent,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
 
+              children: [
+                Container(
+                  height: 30,
+                  width: 40,
+          // decoration: BoxDecoration(
+          //   shape: BoxShape.circle, // Circle shape added
+          // ),
+          child: ClipOval(
+            child: Image.asset('assets/images/download.png', fit: BoxFit.contain),
+          ),
+        ),Text("Hassan",style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                ),)
 
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title,style:const TextStyle(
-          color: Colors.white,
-        ),),
-      ),
-      body: ElevatedButton(
-      //   style: ButtonStyle(
-      //   backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
-      //   foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-      // ),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.cyan,
-          foregroundColor: Colors.white
+              ],
+            ),Container(
+              child: TextButton(onPressed: (){
+                print("Print");
+              },child:(Text("Menu",style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w800,
+              color: Colors.black87,
+              ),)),
+              ),
+            )
+          ],
         ),
-                onPressed: () {
-              print("You are clicked on Text buttons");
-            },
-              onLongPress: () {
-                  print("Hi😊😜");
-              },
-                child: Text("Click here for login"),
       ),
-            
+      body:Container(
+        height: double.infinity,
+        width: double.infinity,
 
+        decoration: BoxDecoration(
+          color: Color(0xFBFF7B7A),
+        ),
+        child: Column(
 
+          children: [
+            Expanded(
 
-       // This trailing comma makes auto-formatting nicer for build methods.
+              child: Container(
+
+                height: 120,
+
+                color: Colors.blue,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                height: 120,
+
+                color: Colors.red,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                height: 120,
+
+                color: Colors.orange,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                height: 120,
+                color: Colors.yellow,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                height: 120,
+                color: Colors.green,
+              ),
+            ),
+            Container(
+              height: 150,
+            width: 400,
+            margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(75),
+                color: Colors.white,
+                border: Border.all(
+                  width: 5,
+                  color:Colors.red,
+
+                ),
+               boxShadow: [BoxShadow(
+                  blurRadius: 16,
+                 color: Colors.white,
+                 blurStyle: BlurStyle.outer,
+                 spreadRadius: 2,
+
+              )],
+
+              ),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 85,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                      height: 100,
+                      width: 85,
+                      color: Colors.white,
+                    ),
+                    Container(
+                      height: 100,
+                      width: 85,
+                      color: Colors.black,
+                    ),
+                    Container(
+                      height: 100,
+                      width: 85,
+                      color: Colors.pink,
+                    ),
+                    Container(
+                      height: 100,
+                      width: 85,
+                      color: Colors.blue,
+                    ),
+                  ],
+                ),
+              ),
+            )
+
+          ],
+        ),
+      ) ,
     );
   }
+
 }
