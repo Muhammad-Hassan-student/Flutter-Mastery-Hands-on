@@ -1,178 +1,158 @@
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/FoodHome.dart';
+// import 'package:flutter_app/FoodHome.dart';
 
-
-void main(){
-  runApp( MyFlutterApp());
+void main() {
+  runApp(MyFlutterApp());
 }
 
 //create MyFlutterApp
-class MyFlutterApp extends StatelessWidget{
-
+class MyFlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Flutter Code Anaylyze",
+      debugShowCheckedModeBanner: false,
 
       theme: ThemeData(
         primarySwatch: Colors.blue,
-
       ),
-        // home: Foodhome(),
-    home: MyHome(),
+      home: Foodhome(),
+
+      // home: MyHome(),
     );
   }
-
 }
 
 // My home page
-class MyHome extends StatelessWidget {
+class DefaultScaffold extends StatelessWidget {
+  final Widget body;
+  DefaultScaffold({required this.body});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
-
               children: [
                 Container(
                   height: 30,
                   width: 40,
-          // decoration: BoxDecoration(
-          //   shape: BoxShape.circle, // Circle shape added
-          // ),
-          child: ClipOval(
-            child: Image.asset('assets/images/download.png', fit: BoxFit.contain),
-          ),
-        ),Text("Hassan",style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black87,
-                ),)
-
+                  // decoration: BoxDecoration(
+                  //   shape: BoxShape.circle, // Circle shape added
+                  // ),
+                  child: ClipOval(
+                    child: Image.asset('assets/images/download.png',
+                        fit: BoxFit.contain),
+                  ),
+                ),
+                Text(
+                  "Hassan",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black87,
+                  ),
+                )
               ],
-            ),Container(
-              child: TextButton(onPressed: (){
-                print("Print");
-              },child:(Text("Menu",style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              color: Colors.black87,
-              ),)),
+            ),
+            Container(
+              child: TextButton(
+                onPressed: () {
+                  print("Print");
+                },
+                child: (Text(
+                  "Menu",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black87,
+                  ),
+                )),
               ),
             )
           ],
         ),
       ),
-      body:Container(
-        height: double.infinity,
-        width: double.infinity,
-
-        decoration: BoxDecoration(
-          color: Color(0xFBFF7B7A),
-        ),
-        child: Column(
-
-          children: [
-            Expanded(
-
-              child: Container(
-
-                height: 120,
-
-                color: Colors.blue,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                height: 120,
-
-                color: Colors.red,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                height: 120,
-
-                color: Colors.orange,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                height: 120,
-                color: Colors.yellow,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                height: 120,
-                color: Colors.green,
-              ),
-            ),
-            Container(
-              height: 150,
-            width: 400,
-            margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(75),
-                color: Colors.white,
-                border: Border.all(
-                  width: 5,
-                  color:Colors.red,
-
+      body: body,
+      bottomNavigationBar: SingleChildScrollView(
+        child: Container(
+            height: 100,
+            color: Colors.white,
+            padding: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.chat,
+                        size: 40,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
                 ),
-               boxShadow: [BoxShadow(
-                  blurRadius: 16,
-                 color: Colors.white,
-                 blurStyle: BlurStyle.outer,
-                 spreadRadius: 2,
-
-              )],
-
-              ),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 85,
-                      color: Colors.blue,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 85,
-                      color: Colors.white,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 85,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 85,
-                      color: Colors.pink,
-                    ),
-                    Container(
-                      height: 100,
-                      width: 85,
-                      color: Colors.blue,
-                    ),
-                  ],
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.supervised_user_circle_sharp,
+                        size: 40,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            )
-
-          ],
-        ),
-      ) ,
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.home,
+                        size: 40,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.dining_rounded,
+                        size: 40,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.favorite,
+                        size: 40,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )),
+      ),
     );
   }
-
 }
