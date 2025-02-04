@@ -1,6 +1,7 @@
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/FoodHome.dart';
+import 'package:flutter_app/chat.dart';
 // import 'package:flutter_app/FoodHome.dart';
 
 void main() {
@@ -94,11 +95,20 @@ class DefaultScaffold extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.chat,
-                        size: 40,
-                        color: Colors.grey,
-                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyChat()));
+                          print("Click on chat");
+                        },
+                        child: const Icon(
+                          Icons.chat,
+                          size: 40,
+                          color: Colors.grey,
+                        ),
+                      )
                     ],
                   ),
                 ),

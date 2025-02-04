@@ -75,13 +75,13 @@ class Foodhome extends StatelessWidget {
             child: SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
 
           //Hero Section
           Container(
             width: double.infinity,
             height: 250, // Adjust height as needed
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
                   'https://cdn.dribbble.com/users/2368465/screenshots/6135676/media/f7de47bcb6c0ae4ebc87e6f4f969f2a8.png?resize=768x576&vertical=center',
@@ -96,12 +96,12 @@ class Foodhome extends StatelessWidget {
             //   ),
             // ),
           ),
-          SizedBox(height: 14),
+          const SizedBox(height: 14),
 
           //Banners
           Container(
             //Banners
-            padding: EdgeInsets.only(left: 20, right: 20),
+            padding: const EdgeInsets.only(left: 20, right: 20),
 
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,7 +133,7 @@ class Foodhome extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Column(
                   //banner 1
                   children: [
@@ -145,7 +145,7 @@ class Foodhome extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Center(
                           child: Text(
@@ -161,7 +161,7 @@ class Foodhome extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Column(
                   //banner 1
                   children: [
@@ -173,7 +173,7 @@ class Foodhome extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Center(
                           child: Text(
@@ -189,26 +189,26 @@ class Foodhome extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
               ],
             ),
           ),
           Container(
-              child: Text(
+              child: const Text(
             "OUR BEST FOODS",
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
           )),
           Container(
             height: 600,
             color: Colors.black,
-            padding: EdgeInsets.only(left: 20, right: 20),
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: ListView.builder(
               itemBuilder: (context, index) {
                 return Container(
                   height: 400,
                   width: 100,
                   color: Colors.white,
-                  margin: EdgeInsets.all(14),
+                  margin: const EdgeInsets.all(14),
                   child: Column(
                     children: [
                       Row(
@@ -230,21 +230,21 @@ class Foodhome extends StatelessWidget {
                             menuData[index]["name"],
                             style: TextStyle(fontSize: 24),
                           ),
-                          margin: EdgeInsets.only(bottom: 10),
+                          margin: const EdgeInsets.only(bottom: 10),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
                               "Price: Rs ${menuData[index]["price"]}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                   decoration: TextDecoration.underline),
                             ),
                             Text(
                               "Ratiting: ${menuData[index]["rating"]}...",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   backgroundColor: Colors.black,
                                   fontSize: 18,
                                   color: Colors.yellow),
@@ -254,14 +254,14 @@ class Foodhome extends StatelessWidget {
                       ]),
                       Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           ElevatedButton(
                               onPressed: () {
                                 print("Order Now");
                               },
-                              child: Padding(
+                              child: const Padding(
                                   padding: EdgeInsets.only(
                                       left: 40, right: 40, top: 10, bottom: 10),
                                   child: Text(
