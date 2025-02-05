@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/FoodHome.dart';
 import 'package:flutter_app/chat.dart';
+import 'package:flutter_app/pages/Profile.dart';
 // import 'package:flutter_app/FoodHome.dart';
 
 void main() {
@@ -108,7 +109,8 @@ class DefaultScaffold extends StatelessWidget {
                           size: 40,
                           color: Colors.grey,
                         ),
-                      )
+                      ),
+                      Text("My Chat")
                     ],
                   ),
                 ),
@@ -116,11 +118,20 @@ class DefaultScaffold extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.supervised_user_circle_sharp,
-                        size: 40,
-                        color: Colors.grey,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfilePage()));
+                          print("Click on profile");
+                        },
+                        child: const Icon(
+                          Icons.supervised_user_circle_sharp,                          size: 40,
+                          color: Colors.grey,
+                        ),
                       ),
+                      Text("Profile")
                     ],
                   ),
                 ),
@@ -128,11 +139,20 @@ class DefaultScaffold extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.home,
-                        size: 40,
-                        color: Colors.grey,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>  Foodhome()));
+                          print("Click on home");
+                        },
+                        child: const Icon(
+                          Icons.home,                          size: 40,
+                          color: Colors.grey,
+                        ),
                       ),
+                      Text("Home")
                     ],
                   ),
                 ),
@@ -140,11 +160,20 @@ class DefaultScaffold extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.dining_rounded,
-                        size: 40,
-                        color: Colors.grey,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyChat()));
+                          print("Click on menu");
+                        },
+                        child: const Icon(
+                          Icons.dining_rounded,                         size: 40,
+                          color: Colors.grey,
+                        ),
                       ),
+                      Text("Menu")
                     ],
                   ),
                 ),
@@ -152,11 +181,20 @@ class DefaultScaffold extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.favorite,
-                        size: 40,
-                        color: Colors.grey,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MyChat()));
+                          print("Add to favorite");
+                        },
+                        child: const Icon(
+                          Icons.favorite,                         size: 40,
+                          color: Colors.grey,
+                        ),
                       ),
+                      Text("Favorite")
                     ],
                   ),
                 ),
