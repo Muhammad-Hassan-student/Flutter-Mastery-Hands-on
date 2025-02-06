@@ -26,6 +26,7 @@ class ProfilePage extends StatelessWidget{
              margin: EdgeInsets.only(top: 30),
              child:  Column(
                children: [
+                 //Username
                  TextField(
                       controller: username,
                    decoration: InputDecoration(
@@ -60,7 +61,7 @@ class ProfilePage extends StatelessWidget{
 
                  ),
                  SizedBox(height: 20,),
-
+                  //email
                  TextField(
                    controller: email,
                    decoration: InputDecoration(
@@ -95,6 +96,7 @@ class ProfilePage extends StatelessWidget{
 
                  ),
                     SizedBox(height: 20,),
+                 //password
                  TextField(
                         controller: password,
                       obscureText:true,
@@ -131,6 +133,32 @@ class ProfilePage extends StatelessWidget{
                        suffixIcon: Icon(Icons.password)
                    ),
 
+                 ),
+                 SizedBox(height: 20,),
+                 //Time
+                 Container(
+                   child: Row(
+                     children: [
+                       
+                        OutlinedButton(onPressed:  ()async{
+                          DateTime? showDateTime = await showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(1965), 
+                              lastDate:  DateTime.now(),);
+                          if(showDateTime != null){
+                            print("Day: ${showDateTime?.day}");
+                          }
+                        }, child: Text("Date of birth")),
+                       Container(
+                         margin: EdgeInsets.only(left: 22),
+                         width: 150,
+                         child: Text("Input Date of birth from your ID card",style: TextStyle(
+                            color: Colors.blueAccent
+                         ),),
+                       )
+                     ],
+                   ),
                  ),
                  SizedBox(height: 14,),
                  ElevatedButton(onPressed: (){

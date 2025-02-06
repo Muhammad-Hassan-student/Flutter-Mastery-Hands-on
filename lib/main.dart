@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/FoodHome.dart';
 import 'package:flutter_app/chat.dart';
+import 'package:flutter_app/pages/Menu.dart';
 import 'package:flutter_app/pages/Profile.dart';
 // import 'package:flutter_app/FoodHome.dart';
 
@@ -127,7 +128,8 @@ class DefaultScaffold extends StatelessWidget {
                           print("Click on profile");
                         },
                         child: const Icon(
-                          Icons.supervised_user_circle_sharp,                          size: 40,
+                          Icons.supervised_user_circle_sharp,
+                          size: 40,
                           color: Colors.grey,
                         ),
                       ),
@@ -144,11 +146,12 @@ class DefaultScaffold extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>  Foodhome()));
+                                  builder: (context) => Foodhome()));
                           print("Click on home");
                         },
                         child: const Icon(
-                          Icons.home,                          size: 40,
+                          Icons.home,
+                          size: 40,
                           color: Colors.grey,
                         ),
                       ),
@@ -162,14 +165,13 @@ class DefaultScaffold extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MyChat()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Menu()));
                           print("Click on menu");
                         },
                         child: const Icon(
-                          Icons.dining_rounded,                         size: 40,
+                          Icons.dining_rounded,
+                          size: 40,
                           color: Colors.grey,
                         ),
                       ),
@@ -190,7 +192,8 @@ class DefaultScaffold extends StatelessWidget {
                           print("Add to favorite");
                         },
                         child: const Icon(
-                          Icons.favorite,                         size: 40,
+                          Icons.favorite,
+                          size: 40,
                           color: Colors.grey,
                         ),
                       ),
