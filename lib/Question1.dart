@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class Question1 extends StatelessWidget {
+  const Question1({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +15,7 @@ class Question1 extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
+                SizedBox(
                   height: 30,
                   width: 40,
                   // decoration: BoxDecoration(
@@ -24,7 +26,7 @@ class Question1 extends StatelessWidget {
                         fit: BoxFit.contain),
                   ),
                 ),
-                Text(
+                const Text(
                   "Hassan",
                   style: TextStyle(
                     fontSize: 18,
@@ -39,7 +41,7 @@ class Question1 extends StatelessWidget {
                 onPressed: () {
                   print("Print");
                 },
-                child: (Text(
+                child: (const Text(
                   "Menu",
                   style: TextStyle(
                     fontSize: 18,
@@ -55,7 +57,7 @@ class Question1 extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFBFF7B7A),
         ),
         child: Column(
@@ -93,7 +95,7 @@ class Question1 extends StatelessWidget {
             Container(
               height: 150,
               width: 400,
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(75),
                 color: Colors.white,
@@ -101,7 +103,7 @@ class Question1 extends StatelessWidget {
                   width: 5,
                   color: Colors.red,
                 ),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     blurRadius: 16,
                     color: Colors.white,

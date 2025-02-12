@@ -5,16 +5,18 @@ class ProfilePage extends StatelessWidget {
   var username = TextEditingController();
   var email = TextEditingController();
   var password = TextEditingController();
+
+  ProfilePage({super.key});
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
         body: Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 20, 
         ),
         //Title of page
-        Text(
+        const Text(
           "Sign up",
           style: TextStyle(
             fontSize: 50,
@@ -26,7 +28,7 @@ class ProfilePage extends StatelessWidget {
         Center(
           child: Container(
             width: 300,
-            margin: EdgeInsets.only(top: 30),
+            margin: const EdgeInsets.only(top: 30),
             child: Column(
               children: [
                 //Username
@@ -36,24 +38,24 @@ class ProfilePage extends StatelessWidget {
                       hintText: "Username",
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.green,
                           )),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.deepOrange,
                           )),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.blueAccent)),
+                          borderSide: const BorderSide(color: Colors.blueAccent)),
                       disabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
                           borderSide:
-                              BorderSide(width: 2, color: Colors.black87)),
-                      suffixIcon: Icon(Icons.man)),
+                              const BorderSide(width: 2, color: Colors.black87)),
+                      suffixIcon: const Icon(Icons.man)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 //email
@@ -63,24 +65,24 @@ class ProfilePage extends StatelessWidget {
                       hintText: "Email",
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.green,
                           )),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.deepOrange,
                           )),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.blueAccent)),
+                          borderSide: const BorderSide(color: Colors.blueAccent)),
                       disabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
                           borderSide:
-                              BorderSide(width: 2, color: Colors.black87)),
-                      suffixIcon: Icon(Icons.email)),
+                              const BorderSide(width: 2, color: Colors.black87)),
+                      suffixIcon: const Icon(Icons.email)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 //password
@@ -92,24 +94,24 @@ class ProfilePage extends StatelessWidget {
                       hintText: "* * * * * * * *",
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.green,
                           )),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.deepOrange,
                           )),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.blueAccent)),
+                          borderSide: const BorderSide(color: Colors.blueAccent)),
                       disabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
                           borderSide:
-                              BorderSide(width: 2, color: Colors.black87)),
-                      suffixIcon: Icon(Icons.password)),
+                              const BorderSide(width: 2, color: Colors.black87)),
+                      suffixIcon: const Icon(Icons.password)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 //Time
@@ -125,14 +127,14 @@ class ProfilePage extends StatelessWidget {
                               lastDate: DateTime.now(),
                             );
                             if (showDateTime != null) {
-                              print("Day: ${showDateTime?.day}");
+                              print("Day: ${showDateTime.day}");
                             }
                           },
-                          child: Text("Date of birth")),
+                          child: const Text("Date of birth")),
                       Container(
-                        margin: EdgeInsets.only(left: 22),
+                        margin: const EdgeInsets.only(left: 22),
                         width: 150,
-                        child: Text(
+                        child: const Text(
                           "Input Date of birth from your ID card",
                           style: TextStyle(color: Colors.blueAccent),
                         ),
@@ -140,7 +142,7 @@ class ProfilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 14,
                 ),
                 ElevatedButton(
@@ -153,8 +155,8 @@ class ProfilePage extends StatelessWidget {
                     print(
                         "Username: $uUsername \n Email: $uEmail \n Password: $password ");
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 60, right: 60),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 60, right: 60),
                     child: Text(
                       "Sign up",
                     ),

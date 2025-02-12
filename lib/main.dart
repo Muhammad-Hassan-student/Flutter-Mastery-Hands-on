@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/FoodHome.dart';
 import 'package:flutter_app/chat.dart';
+import 'package:flutter_app/pages/Favorite.dart';
 import 'package:flutter_app/pages/Menu.dart';
 import 'package:flutter_app/pages/Profile.dart';
 // import 'package:flutter_app/FoodHome.dart';
@@ -12,6 +13,8 @@ void main() {
 
 //create MyFlutterApp
 class MyFlutterApp extends StatelessWidget {
+  const MyFlutterApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +34,7 @@ class MyFlutterApp extends StatelessWidget {
 // My home page
 class DefaultScaffold extends StatelessWidget {
   final Widget body;
-  DefaultScaffold({required this.body});
+  const DefaultScaffold({super.key, required this.body});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,7 @@ class DefaultScaffold extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
+                SizedBox(
                   height: 30,
                   width: 40,
                   // decoration: BoxDecoration(
@@ -55,7 +58,7 @@ class DefaultScaffold extends StatelessWidget {
                         fit: BoxFit.contain),
                   ),
                 ),
-                Text(
+                const Text(
                   "Hassan",
                   style: TextStyle(
                     fontSize: 18,
@@ -70,7 +73,7 @@ class DefaultScaffold extends StatelessWidget {
                 onPressed: () {
                   print("Print");
                 },
-                child: (Text(
+                child: (const Text(
                   "Menu",
                   style: TextStyle(
                     fontSize: 18,
@@ -88,7 +91,7 @@ class DefaultScaffold extends StatelessWidget {
         child: Container(
             height: 100,
             color: Colors.white,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -111,7 +114,7 @@ class DefaultScaffold extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      Text("My Chat")
+                      const Text("My Chat")
                     ],
                   ),
                 ),
@@ -133,7 +136,7 @@ class DefaultScaffold extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      Text("Profile")
+                      const Text("Profile")
                     ],
                   ),
                 ),
@@ -155,7 +158,7 @@ class DefaultScaffold extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      Text("Home")
+                      const Text("Home")
                     ],
                   ),
                 ),
@@ -175,7 +178,7 @@ class DefaultScaffold extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      Text("Menu")
+                      const Text("Menu")
                     ],
                   ),
                 ),
@@ -185,11 +188,9 @@ class DefaultScaffold extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MyChat()));
-                          print("Add to favorite");
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => MyFavorite()));
+                          print("Click on Favorite");
                         },
                         child: const Icon(
                           Icons.favorite,
@@ -197,7 +198,7 @@ class DefaultScaffold extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      Text("Favorite")
+                      const Text("Favorite")
                     ],
                   ),
                 ),

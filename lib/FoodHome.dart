@@ -68,6 +68,8 @@ class Foodhome extends StatelessWidget {
           "https://easyeat.ancorathemes.com/wp-content/uploads/2023/02/product-14-copyright-1024x1024.png"
     },
   ];
+
+  Foodhome({super.key});
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
@@ -109,7 +111,7 @@ class Foodhome extends StatelessWidget {
                 Column(
                   //banner 1
                   children: [
-                    Container(
+                    SizedBox(
                       width: 450,
                       height: 200,
                       child: Image.network(
@@ -117,7 +119,7 @@ class Foodhome extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Center(
                           child: Text(
@@ -137,7 +139,7 @@ class Foodhome extends StatelessWidget {
                 Column(
                   //banner 1
                   children: [
-                    Container(
+                    SizedBox(
                       width: 450,
                       height: 200,
                       child: Image.network(
@@ -165,7 +167,7 @@ class Foodhome extends StatelessWidget {
                 Column(
                   //banner 1
                   children: [
-                    Container(
+                    SizedBox(
                       width: 450,
                       height: 200,
                       child: Image.network(
@@ -226,11 +228,11 @@ class Foodhome extends StatelessWidget {
                       ),
                       Column(children: [
                         Container(
+                          margin: const EdgeInsets.only(bottom: 10),
                           child: Text(
                             menuData[index]["name"],
                             style: TextStyle(fontSize: 24),
                           ),
-                          margin: const EdgeInsets.only(bottom: 10),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,

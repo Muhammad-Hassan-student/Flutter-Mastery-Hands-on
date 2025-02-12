@@ -23,6 +23,8 @@ class MyChat extends StatelessWidget {
     {"name": "Muhammad", "latestmessage": "Hi Hello kese ho"},
     {"name": "Muhammad", "latestmessage": "Hi Hello kese ho"},
   ];
+
+  MyChat({super.key});
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -33,18 +35,18 @@ class MyChat extends StatelessWidget {
               return Card(
                 child: ListTile(
                   // leading: Text('$index'),
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     backgroundImage:
                         AssetImage("assets/images/hassan-profile.jpg"),
                   ),
                   title: Text('${chatDetail[index]["name"]}'),
                   subtitle: Text("${chatDetail[index]["latestmessage"]}"),
-                  trailing: Icon(Icons.messenger_outline),
+                  trailing: const Icon(Icons.messenger_outline),
                 ),
               );
             },
             separatorBuilder: (context, index) {
-              return Divider(
+              return const Divider(
                   // height: 50,
                   // color: Colors.grey,
                   // thickness: 1,

@@ -6,10 +6,12 @@ import 'package:intl/intl.dart';
 class Menu extends StatelessWidget {
   var time = DateTime.now();
 
+  Menu({super.key});
+
   @override
   Widget build(BuildContext context) {
     var arrColors = [
-      Colors.amber,
+      Colors.red,
       Colors.black,
       Colors.blue,
       Colors.red,
@@ -84,7 +86,7 @@ class Menu extends StatelessWidget {
     ];
 
     return DefaultScaffold(
-        body: Container(
+        body: SizedBox(
             height: double.infinity,
             child: SingleChildScrollView(
               child: Column(
@@ -92,19 +94,19 @@ class Menu extends StatelessWidget {
                   //time zone
                   Text(
                     "Zone ${time.timeZoneName}",
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 34,
                         fontWeight: FontWeight.w700,
                         fontFamily: 'Charmonman'),
                   ),
                   Text(
                       "Current time: ${DateFormat('yMMMMEEEEd').format(time)}"),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   //GridView.count
                   Container(
-                      padding: EdgeInsets.only(left: 20, right: 20),
+                      padding: const EdgeInsets.only(left: 20, right: 20),
                       height: 400,
                       child: GridView.count(
                         //products how many colums divided
@@ -139,7 +141,7 @@ class Menu extends StatelessWidget {
                       )),
                   //GridView.extent
                   Container(
-                    padding: EdgeInsets.only(left: 20, right: 20),
+                    padding: const EdgeInsets.only(left: 20, right: 20),
                     height: 400,
                     child: GridView.extent(
                       //behalf on width of product
@@ -173,11 +175,12 @@ class Menu extends StatelessWidget {
                   ),
 
                   //GridView.builder
-                  Container(
+                  SizedBox(
                     height: 600,
                     child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 3),
                       itemBuilder: (context, index) {
                         return Container(
                             child: Column(children: [
